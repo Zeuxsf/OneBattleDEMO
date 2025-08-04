@@ -90,12 +90,13 @@ class Enemy(Player):
         
     def ataque(self, jogador):
         print(f'{self.nome} usou seu Tridente para atacar!')
-        print(f'{jogador.nome} -10')
-        jogador.hp -= 10
+        print(f'{jogador.nome} -12')
+        jogador.hp -= 12
     
     def especial(self, jogador):
         print(f'{self.nome} invocou uma grande onda de Peixes Yokais!')
-        print 
+        print(f'{jogador.nome} -35')
+        jogador.hp -= 35 
     
            
 
@@ -232,7 +233,10 @@ apagar_tela()
 
 #----------BATALHA FINAL!----------
 contador = 0
+contador_inimigo = 0
+#Toda a batalha vai acontecer dentro desse while
 while True:
+    
     print(
 f'''{jogador.nome} HP: {cor}{'/' * jogador.hp}{s_cor}
 {inimigo.nome} HP: {'/' * inimigo.hp}
@@ -260,7 +264,6 @@ f'''{jogador.nome} HP: {cor}{'/' * jogador.hp}{s_cor}
         contador += 1           
     
     elif contador >= 3:
-        contador = 0
         print(
     f'''{cor}[1] ATACAR
 [2] FALAR
@@ -280,9 +283,26 @@ f'''{jogador.nome} HP: {cor}{'/' * jogador.hp}{s_cor}
                 elif escolha == 3:
                     jogador.recuperar_hp()
                 elif escolha == 4:
-                    jogador.especial(inimigo)                                                      
+                    jogador.especial(inimigo)
+                    contador = 0                                                      
         except Exception as e:
             print('ERRO. Tente novamente!', e)
+    
+    if inimigo.hp <= 0 or jogador.hp <= 0:
+        break     
+    
+    if contador_inimigo < 3:
+        menu_inimigo = [1,2,3]
+        contador_inimigo += 1
+    elif contador_inimigo >= 3:
+        menu_inimigo = [1,2,3,4]
+     
+    
+    escolha_inimigo = random.choice(menu_inimigo)
+    if escolha_inimigo == 4:
+        contador_inimigo = 0
+    print(escolha_inimigo)         
+    
     
     if inimigo.hp <= 0 or jogador.hp <= 0:
         break                
