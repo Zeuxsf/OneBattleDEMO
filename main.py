@@ -114,7 +114,6 @@ Escolha seu destino: Guerreiro, Mago ou Samurai.
 Pegue uma arma. Prepare suas poções. E enfrente a fúria do invocador de peixes.
 O futuro da vila está nas suas mãos.'''
 
-'''
 for letra in prologo:
     print(letra, end='', flush=True)
     sleep(0.1)
@@ -126,7 +125,6 @@ for l in prologo2:
     sleep(0.05)
 sleep(1)
 print('\nMEU DEUS, QUE FEDOR DE PEIXE!')
-'''
 
 #CRIADOR DE PERSONAGEM
 input('Pressione [ENTER] para continuar. ')
@@ -209,11 +207,10 @@ sleep(0.8)
 apagar_tela()
 
 pos_criador = f'{cor}{nome}{s_cor} está pronto pra batalha contra o FishMancer! seguiu o caminho de {cor}{classe}{s_cor} e pegou {cor}{arma}{s_cor}. O mestre da vila lhe deu duas poções, use com sabedoria...'
-'''
+
 for l in pos_criador:
     print(l, end='', flush=True)
     sleep(0.1)
-'''
     
 print(f'''{cor}
 ------------------------------------------------------------
@@ -317,7 +314,15 @@ f'''{jogador.nome} HP: {cor}{'/' * jogador.hp}{s_cor}
 
 #ENCERRAMENTO
 apagar_tela()
-texto_final = f'''Após a queda do temido Fishmancer, {cor}{jogador.nome}{s_cor} se deparou com uma revelação inesperada:
+if jogador.nome == 'Clara':
+    texto_final = f'''Após a queda do temido Fishmancer, {cor}{jogador.nome}{s_cor} se deparou com uma revelação inesperada:
+nas profundezas do lago profanado, uma princesa sereia — Ondina — estava aprisionada, vítima dos feitiços aquáticos do vilão.
+Grata pela liberdade, Ondina usou seu poder ancestral para unir os mundos divididos pelo caos.
+Paz voltou a reinar sobre os reinos da superfície e das águas.
+O nome {cor}{jogador.nome}{s_cor} ecoa agora entre mares e montanha... E no coração de Alexandre, seu Namorado!
+Te amo gatona!.''' 
+else:
+    texto_final = f'''Após a queda do temido Fishmancer, {cor}{jogador.nome}{s_cor} se deparou com uma revelação inesperada:
 nas profundezas do lago profanado, uma princesa sereia — Ondina — estava aprisionada, vítima dos feitiços aquáticos do vilão.
 Grata pela liberdade, Ondina usou seu poder ancestral para unir os mundos divididos pelo caos.
 Paz voltou a reinar sobre os reinos da superfície e das águas.
