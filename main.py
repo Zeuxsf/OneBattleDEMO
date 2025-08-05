@@ -160,18 +160,15 @@ while True:
 if classe == 'Guerreiro':
     print('''Escolha sua arma!
 [1] Espada
-[2] Clava
-''')
+[2] Clava''')
 elif classe == 'Mago':
     print('''Escolha sua arma!
 [1] Cajado
-[2] Livro de Magias
-''')
+[2] Livro de Magias''')
 elif classe == 'Samurai':
     print('''Escolha sua arma!
 [1] Katana
-[2] Escopeta
-''')        
+[2] Escopeta''')        
 
 while True:
     try:
@@ -250,6 +247,7 @@ f'''{jogador.nome} HP: {cor}{'/' * jogador.hp}{s_cor}
         
         try:
             escolha = int(input(f'{jogador.nome}: '))
+            apagar_tela()
             if escolha < 1 or escolha > 3:
                 print('ERRO. Tente novamente!')
             else:
@@ -272,6 +270,7 @@ f'''{jogador.nome} HP: {cor}{'/' * jogador.hp}{s_cor}
         
         try:
             escolha = int(input(f'{jogador.nome}: '))
+            apagar_tela()
             if escolha < 1 or escolha > 4:
                 print('ERRO. Tente novamente!')
             else:
@@ -299,13 +298,41 @@ f'''{jogador.nome} HP: {cor}{'/' * jogador.hp}{s_cor}
      
     
     escolha_inimigo = random.choice(menu_inimigo)
-    if escolha_inimigo == 4:
-        contador_inimigo = 0
-    print(escolha_inimigo)         
+    if escolha_inimigo == 1:
+        inimigo.ataque(jogador)
+    elif escolha_inimigo == 2:
+        inimigo.falar()
+    elif escolha_inimigo == 3:
+        inimigo.recuperar_hp()        
+    elif escolha_inimigo == 4:
+        contador_inimigo = 0        
     
     
-    if inimigo.hp <= 0 or jogador.hp <= 0:
-        break                
+    if jogador.hp <= 0:
+        jogador.hp = 100
+        print(f'{jogador.nome} FOI SALVO PELO ROTEIRO!')
+    
+    if inimigo.hp <= 0:
+        break
+
+#ENCERRAMENTO
+apagar_tela()
+texto_final = f'''Após a queda do temido Fishmancer, {cor}{jogador.nome}{s_cor} se deparou com uma revelação inesperada:
+nas profundezas do lago profanado, uma princesa sereia — Ondina — estava aprisionada, vítima dos feitiços aquáticos do vilão.
+Grata pela liberdade, Ondina usou seu poder ancestral para unir os mundos divididos pelo caos.
+Paz voltou a reinar sobre os reinos da superfície e das águas.
+O nome {cor}{jogador.nome}{s_cor} ecoa agora entre mares e montanhas...
+Mas novas ameaças podem surgir.''' 
+
+for l in texto_final:
+    print(l,end='',flush=True)
+    sleep(0.1)
+sleep(1)
+print()
+print('FIM', end='',flush=True)
+sleep(1)
+print('?')
+                      
         
         
     
