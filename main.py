@@ -101,10 +101,8 @@ class Enemy(Player):
            
 
 # INICIO
-prologo = '''
-Durante séculos, o Lago do Silêncio permaneceu intocado.
-Suas águas escondem um segredo: um ser ancestral, guardião dos peixes e mestre dos yokais aquáticos...
-'''
+prologo = '''Durante séculos, o Lago do Silêncio permaneceu intocado.
+Suas águas escondem um segredo: um ser ancestral, guardião dos peixes e mestre dos yokais aquáticos...'''
 
 prologo2 = '''Mas a paz acabou.
 A vila de Mizukai começou a pescar mais do que devia.
