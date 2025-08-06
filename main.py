@@ -312,15 +312,8 @@ f'''{jogador.nome} HP: {cor}{'/' * jogador.hp}{s_cor}
 
 #ENCERRAMENTO
 apagar_tela()
-if jogador.nome == 'Clara':
-    texto_final = f'''Após a queda do temido Fishmancer, {cor}{jogador.nome}{s_cor} se deparou com uma revelação inesperada:
-nas profundezas do lago profanado, uma princesa sereia — Ondina — estava aprisionada, vítima dos feitiços aquáticos do vilão.
-Grata pela liberdade, Ondina usou seu poder ancestral para unir os mundos divididos pelo caos.
-Paz voltou a reinar sobre os reinos da superfície e das águas.
-O nome {cor}{jogador.nome}{s_cor} ecoa agora entre mares e montanha... E no coração de Alexandre, seu Namorado!
-Te amo gatona!.''' 
-else:
-    texto_final = f'''Após a queda do temido Fishmancer, {cor}{jogador.nome}{s_cor} se deparou com uma revelação inesperada:
+
+texto_final = f'''Após a queda do temido Fishmancer, {cor}{jogador.nome}{s_cor} se deparou com uma revelação inesperada:
 nas profundezas do lago profanado, uma princesa sereia — Ondina — estava aprisionada, vítima dos feitiços aquáticos do vilão.
 Grata pela liberdade, Ondina usou seu poder ancestral para unir os mundos divididos pelo caos.
 Paz voltou a reinar sobre os reinos da superfície e das águas.
